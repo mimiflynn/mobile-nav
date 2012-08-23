@@ -1,18 +1,16 @@
-/* Mobile Nav jQuery plugin by mimi at mimiflynn dot com */
+/* Mobile Nav jQuery plugin by mimi at mimiflynn dot com github.com/mimiflynn/mobile-nav */
 (function($){
 
  	$.fn.extend({ 
  		
 		//no options currently available
-// 		VWMobileNav: function(options) {
+// 		mobilenav: function(options) {
 
- 		VWMobileNav: function() {
+ 		mobilenav: function() {
 
 			//Set the default values, use comma to separate the settings, example:
 //			var defaults = {
-//				padding: 20,
-//				mouseOverColor : '#000000',
-//				mouseOutColor : '#ffffff'
+//				navClass: mobile-nav
 //			}
 //				
 //			var options =  $.extend(defaults, options);
@@ -115,7 +113,7 @@
   
         }
 
-        function activate(){ //When mobile-nav-link is tapped, do this
+        function activate(){ //When mobile-nav-link is tapped, do this - currently not in use
 
           $('.mobile-nav').toggle(); //show or hide menu
 
@@ -128,7 +126,7 @@
     
           //set up mobile-nav
           var mobileNavLink = '<a href="#" id="mobile-nav-link">Navigation</a>';
-          $(el).addClass('mobile-nav').hide();
+          $(el).find('> ul').addClass('mobile-nav').hide();
           $(el).find('li:has(> ul) > a').addClass('has-subnav');
         
           if ($('#mobile-nav-link').size() === 0) {
